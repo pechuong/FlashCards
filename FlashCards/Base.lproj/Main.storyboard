@@ -50,6 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="spI-n8-jRA" id="fj4-iG-28g"/>
+                        <outlet property="card" destination="Dfl-I8-VNy" id="Wmt-aV-e07"/>
                         <outlet property="questionLabel" destination="7YR-Kd-Lwp" id="gs3-47-Nbr"/>
                     </connections>
                 </viewController>
