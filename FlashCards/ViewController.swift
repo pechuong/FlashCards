@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         card.layer.cornerRadius = 20.0
-        card.layer.shadowRadius = 25.0
+        card.layer.shadowRadius = 20.0
         card.layer.shadowOpacity = 0.5
         answerLabel.layer.cornerRadius = 20.0
         questionLabel.layer.cornerRadius = 20.0
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btn2(_ sender: Any) {
-        questionLabel.isHidden = true
+        didTapOnFlashcard(0)
         btn1.isHidden = false
         btn3.isHidden = false
     }
