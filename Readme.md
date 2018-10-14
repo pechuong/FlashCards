@@ -5,7 +5,7 @@ Makes a Flash Card app that is like quizlet or something.
 
 ### App Walk-though
 
-<img src="http://g.recordit.co/GARO8M2Kp1.gif" width=200><br>
+<img src="http://g.recordit.co/nL44qDkyG8.gif" width=200><br>
 
 ## Required
 - [x] Create New Project in Xcode
