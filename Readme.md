@@ -6,7 +6,7 @@ Adds the ability to write custom question and answer flashcards
 ### App Walk-though
 `TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
+<img src="http://g.recordit.co/CWo5Yrx5wk.gif" width=200><br>
 
 ## Required
 - [x] User can open the creation screen
