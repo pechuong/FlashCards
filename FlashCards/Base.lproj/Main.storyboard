@@ -110,14 +110,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question:" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pl0-G4-SNK">
-                                <rect key="frame" x="94" y="119" width="186" height="30"/>
+                                <rect key="frame" x="70" y="218" width="235" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer:" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2XE-yE-LER">
-                                <rect key="frame" x="94" y="196" width="186" height="30"/>
+                                <rect key="frame" x="70" y="424" width="210" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -133,7 +133,16 @@
                                 <action selector="didTapOnCancel:" destination="B18-Ip-Abf" id="T6G-bX-YT4"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="sDK-PE-7Iy">
+                            <connections>
+                                <action selector="didTapOnDone:" destination="B18-Ip-Abf" id="w8H-ch-yAI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="answerTextField" destination="2XE-yE-LER" id="AfH-YZ-AM2"/>
+                        <outlet property="questionTextField" destination="pl0-G4-SNK" id="ocV-xF-yXG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vow-z6-GJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
