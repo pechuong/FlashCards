@@ -100,9 +100,11 @@ class ViewController: UIViewController {
         let flashcard = Flashcard(question: question, answer: answer)
         questionLabel.text = flashcard.question
         answerLabel.text = flashcard.answer
+        
         flashcards.append(flashcard)
         print("Added flashcard :D")
         print("We now have \(flashcards.count) flashcards")
+        saveAllFlashcardsToDisk()
         
         currentIndex = flashcards.count - 1
         print("Our current index is \(currentIndex)")
