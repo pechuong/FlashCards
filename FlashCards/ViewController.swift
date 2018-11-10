@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct Flashcard {
+    var question: String
+    var answer: String
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var answerLabel: UILabel!
@@ -18,9 +23,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var btn2: UIButton!
     @IBOutlet weak var btn3: UIButton!
 
+    @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    var flashcards = [Flashcard]()
+    var currentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         card.layer.cornerRadius = 20.0
         card.layer.shadowRadius = 20.0
@@ -42,6 +52,15 @@ class ViewController: UIViewController {
         
         btn3.layer.borderWidth = 3.0
         btn3.layer.borderColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+        
+        readSavedFlashcards()
+        
+        if (flashcards.count == 0) {
+            updateFlashcard(question: "What is my purpose?", answer: "Pass Butter")
+        } else {
+            updateLabels()
+            updateNextPrevButtons()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,9 +79,58 @@ class ViewController: UIViewController {
         }
     }
     
+    func saveAllFlashcardsToDisk() {
+        let dictionary = flashcards.map { (card) -> [String: String] in
+            return ["question": card.question, "answer": card.answer]
+        }
+        UserDefaults.standard.set(dictionary, forKey: "flashcards")
+        print("Flashcards saved to UserDefaults")
+    }
+    
+    func readSavedFlashcards() {
+        if let dictionary = UserDefaults.standard.array(forKey: "flashcards") as? [[String: String]] {
+            let savedCards = dictionary.map { (dictionaryArray) -> Flashcard in
+                return Flashcard(question: dictionaryArray["question"]! , answer: dictionaryArray["answer"]!)
+            }
+            flashcards.append(contentsOf: savedCards)
+        }
+    }
+    
     func updateFlashcard(question: String, answer: String) {
-        questionLabel.text = question
-        answerLabel.text = answer
+        let flashcard = Flashcard(question: question, answer: answer)
+        questionLabel.text = flashcard.question
+        answerLabel.text = flashcard.answer
+        flashcards.append(flashcard)
+        print("Added flashcard :D")
+        print("We now have \(flashcards.count) flashcards")
+        
+        currentIndex = flashcards.count - 1
+        print("Our current index is \(currentIndex)")
+        
+        updateNextPrevButtons()
+        updateLabels()
+    }
+    
+    func updateNextPrevButtons() {
+        if (flashcards.count == 1) {
+            prevButton.isEnabled = false
+            nextButton.isEnabled = false
+        } else if (currentIndex == 0) {
+            prevButton.isEnabled = false
+            nextButton.isEnabled = true
+        } else if (currentIndex == flashcards.count - 1) {
+            prevButton.isEnabled = true
+            nextButton.isEnabled = false
+        } else {
+            nextButton.isEnabled = true
+            prevButton.isEnabled = true
+        }
+    }
+    
+    func updateLabels() {
+        let currentFlashcard = flashcards[currentIndex]
+        questionLabel.text = currentFlashcard.question
+        answerLabel.text = currentFlashcard.answer
     }
     
     @IBAction func btn1(_ sender: Any) {
@@ -77,6 +145,22 @@ class ViewController: UIViewController {
     
     @IBAction func btn3(_ sender: Any) {
         btn3.isHidden = true
+    }
+    
+    @IBAction func didTapOnPrev(_ sender: Any) {
+        if (currentIndex > 0) {
+            currentIndex -= 1
+            updateLabels()
+            updateNextPrevButtons()
+        }
+    }
+    
+    @IBAction func didTapOnNext(_ sender: Any) {
+        if (currentIndex + 1 < flashcards.count) {
+            currentIndex += 1
+            updateLabels()
+            updateNextPrevButtons()
+        }
     }
 }
 
