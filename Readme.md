@@ -1,20 +1,35 @@
-## Lab 2
+## Lab 3
 
 ### App Description
-`TODO://` Add app description
+Added ability to store and load new flashcards as well as have multiple flashcards
 
 ### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
-
-<img src="YOUR_GIF_URL_HERE" width=200><br>
+<img src="http://g.recordit.co/KhFosFpljo.gif" width=200><br>
 
 `TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
 
 ## Required
+- [x] User can browse through multiple flashcards
+- [ ] User can re-open the app and see previously created flashcards
+- [ ] Push code to GitHub
+## Optional
+- [ ] User can delete a flashcard
+- [ ] User can edit existing flashcard
+- [ ] User can store multiple choice questions
+
+## Lab 2
+
+### App Description
+Adds the ability to write custom question and answer flashcards
+
+### App Walk-though
+<img src="http://g.recordit.co/CWo5Yrx5wk.gif" width=200><br>
+
+## Required
 - [x] User can open the creation screen
 - [x] User can cancel out of the creation screen
-- [ ] User can enter a new question and answer in the creation screen to then show it on the flashcard
-- [ ] Push code to GitHub
+- [x] User can enter a new question and answer in the creation screen to then show it on the flashcard
+- [x] Push code to GitHub
 ## Optional
 - [ ] User gets an error if they try to create a new flashcard with no question or answer
 - [ ] User can edit existing flashcard
