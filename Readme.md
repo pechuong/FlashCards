@@ -10,8 +10,8 @@ Added ability to store and load new flashcards as well as have multiple flashcar
 
 ## Required
 - [x] User can browse through multiple flashcards
-- [ ] User can re-open the app and see previously created flashcards
-- [ ] Push code to GitHub
+- [x] User can re-open the app and see previously created flashcards
+- [x] Push code to GitHub
 ## Optional
 - [ ] User can delete a flashcard
 - [ ] User can edit existing flashcard
