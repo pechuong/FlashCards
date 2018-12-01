@@ -72,11 +72,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-        if (questionLabel.isHidden) {
-            questionLabel.isHidden = false
-        } else {
-            questionLabel.isHidden = true
-        }
+        flipFlashcard()
+    }
+    
+    func flipFlashcard() {
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            if (self.questionLabel.isHidden) {
+                self.questionLabel.isHidden = false
+            } else {
+                self.questionLabel.isHidden = true
+            }
+        })
+        
     }
     
     func saveAllFlashcardsToDisk() {
@@ -152,16 +159,42 @@ class ViewController: UIViewController {
     @IBAction func didTapOnPrev(_ sender: Any) {
         if (currentIndex > 0) {
             currentIndex -= 1
-            updateLabels()
             updateNextPrevButtons()
+            animateCardOut(direction: "left")
         }
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
         if (currentIndex + 1 < flashcards.count) {
             currentIndex += 1
-            updateLabels()
             updateNextPrevButtons()
+            animateCardOut(direction: "right")
+        }
+    }
+    
+    func animateCardOut(direction: String) {
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            if (direction == "right") {
+                self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+            } else {
+                self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+            }
+        }, completion: { finished in
+            self.updateLabels()
+            self.animateCardIn(direction: direction)
+        })
+    }
+    
+    func animateCardIn(direction: String) {
+        
+        if (direction == "right") {
+            card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        } else {
+            card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
         }
     }
 }
