@@ -1,7 +1,8 @@
 ## Lab 4
 
 ### App Description
-`TODO://` Add app description
+- Adds animation and transition when switching flashcards
+- Adds images to buttons
 
 ### App Walk-though
 `TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
