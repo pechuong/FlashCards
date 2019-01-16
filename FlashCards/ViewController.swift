@@ -69,6 +69,8 @@ class ViewController: UIViewController {
         let creationController = navigationController.topViewController as! CreationViewController
         
         creationController.flashcardController = self
+        creationController.initialQuestion = questionLabel.text
+        creationController.initialAnswer = answerLabel.text
     }
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
