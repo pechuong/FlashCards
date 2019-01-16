@@ -27,9 +27,16 @@ class CreationViewController: UIViewController {
     @IBAction func didTapOnDone(_ sender: Any) {
         let questionText = questionTextField.text
         let answerText = answerTextField.text
-        flashcardController.updateFlashcard(question: questionText!, answer: answerText!)
         
-        dismiss(animated: true)
+        if (questionText == nil || answerText == nil || questionText!.isEmpty || answerText!.isEmpty) {
+            let alert = UIAlertController(title: "Missing Info", message: "You need to enter both a questiona and answer", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(okAction)
+            present(alert, animated: true)
+        } else {
+            flashcardController.updateFlashcard(question: questionText!, answer: answerText!)
+            dismiss(animated: true)
+        }
     }
     
     /*

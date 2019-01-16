@@ -156,6 +156,9 @@ class ViewController: UIViewController {
         btn3.isHidden = true
     }
     
+    //***************************************
+    // Next and Previous Button Tap Action
+    //***************************************
     @IBAction func didTapOnPrev(_ sender: Any) {
         if (currentIndex > 0) {
             currentIndex -= 1
@@ -172,6 +175,9 @@ class ViewController: UIViewController {
         }
     }
     
+    //********************************
+    // Animation of the flashcards
+    //********************************
     func animateCardOut(direction: String) {
         
         UIView.animate(withDuration: 0.3, animations: {

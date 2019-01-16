@@ -99,8 +99,8 @@
 		D09B694A21728FAA00DEA143 /* FlashCards */ = {
 			isa = PBXGroup;
 			children = (
-				D09B694B21728FAA00DEA143 /* AppDelegate.swift */,
 				D09B694D21728FAB00DEA143 /* ViewController.swift */,
+				D09B694B21728FAA00DEA143 /* AppDelegate.swift */,
 				D09B694F21728FAB00DEA143 /* Main.storyboard */,
 				D008F3062185059D0020906F /* CreationViewController.swift */,
 				D09B695221728FAC00DEA143 /* Assets.xcassets */,
