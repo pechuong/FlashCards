@@ -42,7 +42,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="✏️"/>
                                         <connections>
-                                            <segue destination="7a4-tx-sGV" kind="show" id="kvv-Vn-j5N"/>
+                                            <segue destination="7a4-tx-sGV" kind="show" identifier="EditSegue" id="kvv-Vn-j5N"/>
                                         </connections>
                                     </button>
                                 </subviews>
